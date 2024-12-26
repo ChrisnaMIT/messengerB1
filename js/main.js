@@ -4,7 +4,7 @@ let token = null
 const formLogin = document.querySelector(".formLogin")
 const formSignUP = document.querySelector(".formSignUP")
 
-
+//test21
 
 
 async function login(username, password){
@@ -51,7 +51,7 @@ function displayLoginForm(){
             alert("tu t'es connecté ")
             // ici afficher le displau du chat après le Login
             console.log(token)
-
+//sallut
         })
     })
 }
