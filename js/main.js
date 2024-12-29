@@ -1,10 +1,12 @@
 const containerLogin = document.querySelector(".containerLogin")
 const containerSignUP = document.querySelector(".containerSignUP")
 let token = null
-const formLogin = document.querySelector(".formLogin")
-const formSignUP = document.querySelector(".formSignUP")
+let formLogin = document.querySelector(".formLogin")
+let formSignUP = document.querySelector(".formSignUP")
 
 //test22
+
+
 
 
 async function login(username, password){
@@ -35,9 +37,8 @@ async function login(username, password){
 
 function displayLoginForm(){
 
-    containerLogin.style.display = "block"
+
     formLogin.style.display = "block"
-    containerSignUP.style.display = "none"
     formSignUP.style.display= "none"
 
     let username = document.querySelector(".usernameLogin")
@@ -54,4 +55,42 @@ function displayLoginForm(){
 //sallut
         })
     })
+}
+
+
+
+
+function switchPage(){
+    let buttonSwitchSignUP = document.querySelector(".buttonSwitchSignUP")
+    let buttonSwitchLogin = document.querySelector(".buttonSwitchLogin")
+    let formLogin = document.querySelector(".formLogin")
+    let formSignUP = document.querySelector(".formSignUP")
+
+
+    buttonSwitchSignUP.addEventListener('click', (e) => {
+        console.log("ca marche quand j'appuie sur le bouton ")
+        formLogin.style.display = "none"
+        formSignUP.style.display= "block"
+
+
+    });
+
+    buttonSwitchLogin.addEventListener('click', (e) => {
+        formLogin.style.display = "block"
+        formSignUP.style.display = "none"
+
+    });
+}
+
+
+
+switchPage()
+
+
+if(!token){
+    displayLoginForm()
+    switchPage()
+}else {
+    //displayChat()
+    //displayMessage()
 }
