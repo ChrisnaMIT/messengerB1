@@ -33,6 +33,7 @@ async function login(username, password){
 
             return json.token
 
+
         })
 }
 
@@ -73,6 +74,9 @@ submitLogin.addEventListener('click', () => {
         .then((response) => {
             token = response
 
+            if (!(token===null||token===undefined)) {
+                return true
+            }
             containerLog.style.display = "none";
             pageMessagerie.style.display = "block";
 
