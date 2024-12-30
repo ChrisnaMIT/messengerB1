@@ -32,7 +32,26 @@ async function login(username, password){
         })
 }
 
+function switchPage(){
+    let buttonSwitchSignUP = document.querySelector(".buttonSwitchSignUP")
+    let buttonSwitchLogin = document.querySelector(".buttonSwitchLogin")
 
+
+
+    buttonSwitchSignUP.addEventListener('click', () => {
+
+        formLogin.style.display = "none"
+        formSignUP.style.display= "block"
+
+
+    })
+
+    buttonSwitchLogin.addEventListener('click', () => {
+        formLogin.style.display = "block"
+        formSignUP.style.display = "none"
+
+    })
+}
 
 
 function displayLoginForm(){
@@ -50,7 +69,7 @@ function displayLoginForm(){
         login(username.value, password.value).then((data) => {
             token = data
             alert("tu t'es connecté ")
-            // ici afficher le displau du chat après le Login
+            // ici afficher le display du chat après le Login
             console.log(token)
 //sallut
         })
@@ -60,31 +79,11 @@ function displayLoginForm(){
 
 
 
-function switchPage(){
-    let buttonSwitchSignUP = document.querySelector(".buttonSwitchSignUP")
-    let buttonSwitchLogin = document.querySelector(".buttonSwitchLogin")
-    let formLogin = document.querySelector(".formLogin")
-    let formSignUP = document.querySelector(".formSignUP")
-
-
-    buttonSwitchSignUP.addEventListener('click', (e) => {
-        console.log("ca marche quand j'appuie sur le bouton ")
-        formLogin.style.display = "none"
-        formSignUP.style.display= "block"
-
-
-    });
-
-    buttonSwitchLogin.addEventListener('click', (e) => {
-        formLogin.style.display = "block"
-        formSignUP.style.display = "none"
-
-    });
-}
 
 
 
-switchPage()
+
+
 
 
 if(!token){
@@ -94,3 +93,4 @@ if(!token){
     //displayChat()
     //displayMessage()
 }
+
