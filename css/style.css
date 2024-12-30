@@ -4,15 +4,24 @@ html, body{
     background-color: midnightblue;
 
 }
+.containerSignUP{
+    display: block;
+}
 
-.formLogin{
+.containerLogin{
+    display:none;
+}
+
+.pageMessagerie{
     display: none;
+    color: white;
+}
+.pageLogin{
     border: 1px solid white;
     border-radius: 5px;
 }
 
-.formSignUP{
-    display: block;
+.pageSignUP{
     border: 1px solid white;
     border-radius: 5px;
 }

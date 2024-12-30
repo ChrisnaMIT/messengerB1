@@ -1,10 +1,17 @@
 
 let token = null
-const formLogin = document.querySelector(".formLogin")
-const  formSignUP = document.querySelector(".formSignUP")
+const pageLogin = document.querySelector(".pageLogin")
+const pageSignUP = document.querySelector(".pageSignUP")
 const buttonSignup = document.querySelector(".buttonSignUP")
 const buttonLogin = document.querySelector(".buttonLogin")
-//test22
+
+const containerLog = document.querySelector(".containerLog")
+const containerLogin = document.querySelector(".containerLogin")
+const containerSignUP = document.querySelector(".containerSignUP")
+const pageMessagerie = document.querySelector(".pageMessagerie")
+
+const submitSignUP = document.querySelector(".submitSignUP")
+const submitLogin = document.querySelector(".submitLogin")
 
 async function login(username, password){
     console.log(username, password)
@@ -30,12 +37,47 @@ async function login(username, password){
 }
 
 buttonLogin.addEventListener('click', () => {
-    formSignUP.style.display = "block"
-    formLogin.style.display = "none"
-
+    containerSignUP.style.display = "none";
+    containerLogin.style.display = "block";
 })
 
+submitSignUP.addEventListener('click', () => {
 
+    const usernameSignUp = document.querySelector(".usernameSignUP")
+    const passwordSignUP = document.querySelector(".passwordSignUP")
+
+    let paramsSignUP =  {
+        method : "POST",
+        headers : {
+            "Content-Type" : "application/json",
+        },
+        body : JSON.stringify({
+            username : usernameSignUp.value,
+            password: passwordSignUP.value,
+        })
+    }
+    fetch('https://b1messenger.esdlyon.dev/register', paramsSignUP)
+        .then((response) => response.json())
+        .then((json) =>{
+
+            containerSignUP.style.display = "none";
+            containerLogin.style.display = "block";
+        })
+})
+
+submitLogin.addEventListener('click', () => {
+    const usernameLogin = document.querySelector(".usernameLogin")
+    const passwordLogin = document.querySelector(".passwordLogin")
+
+    login(usernameLogin, passwordLogin)
+        .then((response) => {
+            token = response
+
+            containerLog.style.display = "none";
+            pageMessagerie.style.display = "block";
+
+        })
+})
 
 
 
