@@ -75,10 +75,10 @@ submitLogin.addEventListener('click', () => {
             token = response
 
             if (!(token===null||token===undefined)) {
-                return true
+                containerLog.style.display = "none";
+                pageMessagerie.style.display = "block";
             }
-            containerLog.style.display = "none";
-            pageMessagerie.style.display = "block";
+
 
         })
 })
