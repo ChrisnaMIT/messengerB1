@@ -1,13 +1,10 @@
-const containerLogin = document.querySelector(".containerLogin")
-const containerSignUP = document.querySelector(".containerSignUP")
+
 let token = null
-let formLogin = document.querySelector(".formLogin")
-let formSignUP = document.querySelector(".formSignUP")
-
+const formLogin = document.querySelector(".formLogin")
+const  formSignUP = document.querySelector(".formSignUP")
+const buttonSignup = document.querySelector(".buttonSignUP")
+const buttonLogin = document.querySelector(".buttonLogin")
 //test22
-
-
-
 
 async function login(username, password){
     console.log(username, password)
@@ -32,49 +29,11 @@ async function login(username, password){
         })
 }
 
-function switchPage(){
-    let buttonSwitchSignUP = document.querySelector(".buttonSwitchSignUP")
-    let buttonSwitchLogin = document.querySelector(".buttonSwitchLogin")
+buttonLogin.addEventListener('click', () => {
+    formSignUP.style.display = "block"
+    formLogin.style.display = "none"
 
-
-
-    buttonSwitchSignUP.addEventListener('click', () => {
-
-        formLogin.style.display = "none"
-        formSignUP.style.display= "block"
-
-
-    })
-
-    buttonSwitchLogin.addEventListener('click', () => {
-        formLogin.style.display = "block"
-        formSignUP.style.display = "none"
-
-    })
-}
-
-
-function displayLoginForm(){
-
-
-    formLogin.style.display = "block"
-    formSignUP.style.display= "none"
-
-    let username = document.querySelector(".usernameLogin")
-    let password =  document.querySelector(".passwordLogin")
-    let submitLogin = document.querySelector(".submitLogin")
-
-    submitLogin.addEventListener('click', () => {
-
-        login(username.value, password.value).then((data) => {
-            token = data
-            alert("tu t'es connecté ")
-            // ici afficher le display du chat après le Login
-            console.log(token)
-//sallut
-        })
-    })
-}
+})
 
 
 
@@ -86,11 +45,7 @@ function displayLoginForm(){
 
 
 
-if(!token){
-    displayLoginForm()
-    switchPage()
-}else {
-    //displayChat()
-    //displayMessage()
-}
+
+
+
 

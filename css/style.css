@@ -12,13 +12,13 @@ html, body{
 }
 
 .formSignUP{
-    display: none;
+    display: block;
     border: 1px solid white;
     border-radius: 5px;
 }
 
 
-.containerLogin{
+.containerLog{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,13 +26,7 @@ html, body{
 
 
 }
-.containerSignUP{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 
-}
 .form {
     background-color: #fff;
     display: block;
