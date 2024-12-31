@@ -16,17 +16,44 @@ html, body{
     display: none;
     color: white;
 }
-.pageLogin{
-    border: 1px solid white;
-    border-radius: 5px;
+
+.gridMessagerie{
+    display: grid;
+    grid-template-columns: 500px 1fr;
+    padding-top: 10px;
+    height: 700px;
 }
 
-.pageSignUP{
-    border: 1px solid white;
-    border-radius: 5px;
+.partieUtilisateur{
+    font-size: 30px;
+    border: 1px solid red;
+
+
+
+}
+
+.partieChatGeneral{
+    border: 1px solid yellow;
+}
+
+.utilisateurPrivee{
+    border: 1px solid green;
+    height: 60px;
+    width: 300px;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+
+
 }
 
 
+
+
+
+
+
+/*---------------Formulaire--------- */
 .containerLog{
     display: flex;
     justify-content: center;
@@ -34,6 +61,16 @@ html, body{
     height: 100vh;
 
 
+}
+
+.pageSignUP{
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.pageLogin{
+    border: 1px solid white;
+    border-radius: 5px;
 }
 
 .form {
@@ -123,3 +160,8 @@ html, body{
     line-height: 1.25rem;
     text-align: center;
 }
+
+/*---------------Formulaire--------- */
+
+
+
