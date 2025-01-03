@@ -110,7 +110,23 @@ submitLogin.addEventListener('click', () => {
 })
 
 
+function chatGeneral() {
 
+    let paramsChatGeneral = {
+        method : "GET",
+        headers : {
+            "Content-Type" : "application/json",
+            "Authorization" : `Bearer ${token}`
+        },
+    }
+
+    fetch('https://b1messenger.esdlyon.dev/api/messages')
+        .then(response => response.json())
+        .then(data => {
+
+        })
+
+}
 
 
 
